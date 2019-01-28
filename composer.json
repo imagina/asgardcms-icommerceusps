@@ -1,0 +1,45 @@
+{
+    "name": "vendor/icommerceusps",
+    "description": "",
+    "type": "asgard-module",
+    "license": "MIT", 
+    "require": {
+        "php": ">=7.0.0",
+        "composer/installers": "~1.0",
+        "idavoll/core-module": "~3.0",
+        "johnpaulmedina/laravel-usps": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0",
+        "orchestra/testbench": "3.5.*"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\IcommerceUsps\\": ".",
+            "Modules\\": "Modules/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Imagina Dev",
+            "email": "soporte@imaginacolombia.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\IcommerceUsps\\Providers\\IcommerceUspsServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\IcommerceUsps\\": ""
+        }
+    }
+}
