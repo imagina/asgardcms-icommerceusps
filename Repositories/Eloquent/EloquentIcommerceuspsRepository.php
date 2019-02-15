@@ -35,7 +35,7 @@ class EloquentIcommerceuspsRepository extends EloquentBaseRepository implements 
      
            return [
              'status' => 'error',
-             'msj' => trans('icommerceusps::configusps.messages.msjini')
+             'msj' => trans('icommerceusps::icommerceusps.messages.msjini')
            ];
      
          }
