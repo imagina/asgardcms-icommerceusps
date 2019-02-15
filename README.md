@@ -34,4 +34,4 @@
         * @param Request array "options" - country (string)
 
     ### Example
-        https://icommerce.imagina.com.co/api/icommerceusps
+        https://mydomain/api/icommerceusps
