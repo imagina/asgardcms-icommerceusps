@@ -23,15 +23,34 @@ class IcommerceuspsDatabaseSeeder extends Seeder
         $options['shippingRates'] = 1;
         $options['machinable'] = 0;
 
-        $params = array(
-            'title' => trans('icommerceusps::icommerceusps.single'),
-            'description' => trans('icommerceusps::icommerceusps.description'),
-            'name' => config('asgard.icommerceusps.config.shippingName'),
-            'status' => 0,
-            'options' => $options
-        );
+        $titleTrans = 'icommerceusps::icommerceusps.single';
+        $descriptionTrans = 'icommerceusps::icommerceusps.description';
 
-        ShippingMethod::create($params);
+        foreach (['en', 'es'] as $locale) {
+
+            if($locale=='en'){
+                $params = array(
+                    'title' => trans($titleTrans),
+                    'description' => trans($descriptionTrans),
+                    'name' => config('asgard.icommerceusps.config.shippingName'),
+                    'status' => 0,
+                    'options' => $options
+                );
+
+                $shippingMethod = ShippingMethod::create($params);
+                
+            }else{
+
+                $title = trans($titleTrans,[],$locale);
+                $description = trans($descriptionTrans,[],$locale);
+
+                $shippingMethod->translateOrNew($locale)->title = $title;
+                $shippingMethod->translateOrNew($locale)->description = $description;
+
+                $shippingMethod->save();
+            }
+
+        }// Foreach
 
     }
 }
