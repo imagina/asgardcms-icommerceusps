@@ -1,0 +1,5 @@
+url: https://github.com/imagina/asgardcms-icommerceusps
+versions:
+  "1.0.0":
+    added:
+      - Initial Version Icommerce USPS Shipping Method
